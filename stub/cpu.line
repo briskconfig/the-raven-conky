@@ -1,0 +1,1 @@
+${color2}${offset 30}CPU Core X:${color} ${alignr}${offset -00}${cpu cpuY}%${alignr}${cpubar cpuY}
