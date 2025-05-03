@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 function set-cpus() {
   core_ct=`cat /proc/cpuinfo | grep 'processor' | tail -n 1 | awk '{print $NF}'`
