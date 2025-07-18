@@ -4,15 +4,15 @@
 # adapted from user Closebox73
 
 # icon font based openweathermap.org data
-ICON_01D=""
-ICON_01N=""
-ICON_02=""
-ICON_09=""
-ICON_10=""
-ICON_11=""
-ICON_13=""
-ICON_50=""
-NO_DATA=""
+ICON_01D="󰖙"  # Clear
+ICON_01N="󰇥"  # LABEL
+ICON_02=""   # Clouds
+ICON_09=""   # LABEL
+ICON_10="󱡁"   # LABEL
+ICON_11="󰁂"   # LABEL
+ICON_13=""   # LABEL
+ICON_50=""   # LABEL
+NO_DATA=""   # LABEL
 
 WEATHER_ICON=$(cat ~/.cache/weather.json | jq -r '.weather[0].icon')
 

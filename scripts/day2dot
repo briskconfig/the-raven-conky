@@ -2,11 +2,11 @@
 # script to display day as a dot
 
 case $(date +%a) in
-	*Sun*) echo "󰄯 󰄰 󰄰 󰄰 󰄰 󰄰 󰄰 " ;;
-	*Mon*) echo "󰄯 󰄯 󰄰 󰄰 󰄰 󰄰 󰄰 " ;;
-	*Tue*) echo "󰄯 󰄯 󰄯 󰄰 󰄰 󰄰 󰄰 " ;;
-	*Wed*) echo "󰄯 󰄯 󰄯 󰄯 󰄰 󰄰 󰄰 " ;;
-	*Thu*) echo "󰄯 󰄯 󰄯 󰄯 󰄯 󰄰 󰄰 " ;;
-	*Fri*) echo "󰄯 󰄯 󰄯 󰄯 󰄯 󰄯 󰄰 " ;;
-	*Sat*) echo "󰄯 󰄯 󰄯 󰄯 󰄯 󰄯 󰄯 " ;;
+	*Sun*) echo "󰄯󰄰󰄰󰄰󰄰󰄰󰄰" ;;
+	*Mon*) echo "󰄯󰄯󰄰󰄰󰄰󰄰󰄰" ;;
+	*Tue*) echo "󰄯󰄯󰄯󰄰󰄰󰄰󰄰" ;;
+	*Wed*) echo "󰄯󰄯󰄯󰄯󰄰󰄰󰄰" ;;
+	*Thu*) echo "󰄯󰄯󰄯󰄯󰄯󰄰󰄰" ;;
+	*Fri*) echo "󰄯󰄯󰄯󰄯󰄯󰄯󰄰" ;;
+	*Sat*) echo "󰄯󰄯󰄯󰄯󰄯󰄯󰄯" ;;
 esac
