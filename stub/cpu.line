@@ -1,1 +1,1 @@
-${color2}${offset 30}CPU Core X:${color} ${alignr}${offset -00}${cpu cpuY}%${alignr}${cpubar cpuY}
+${cpubar cpuX 8,120}${offset 05}${cpu cpuX}%${alignr}${offset -05}${cpu cpuY}%${alignr}${cpubar cpuY 8,120}
