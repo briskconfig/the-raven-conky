@@ -24,6 +24,7 @@ done
 
 ARTIST="$(mpc --format %artist% | head -1)"
 ALBUM="$(mpc --format %album% | head -1)"
+LEAF="$(mpc --format %file% | head -1)"
 
 TMP=/tmp/conkympd.tmp
 [ ! -f $TMP ] && touch $TMP
@@ -38,14 +39,7 @@ COVER="$CACHE/$ARTIST - $ALBUM.jpg"
 # Is cover cached?
 if [ ! -f "$COVER" ]; then
 # Nope. Download.
-	echo "Downloading cover for $ARTIST - $ALBUM" >> $LOG
-	# Download XML info
-	curl --data-urlencode artist="$ARTIST" --data-urlencode album="$ALBUM" "http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=$APIKEY" -o /tmp/lastfm.xml &> /dev/null
-	echo "Exit: $?. Downloaded $(wc -l /tmp/lastfm.xml | cut -d' ' -f1) bytes." >> $LOG
-	# Strip XML and download mega large cover to cache
-	curl $(sed -n 's|<image size="mega">\(.*\)<\/image>|\1|p' /tmp/lastfm.xml) -o "$COVER" &> /dev/null
-	echo "Exit: $?" >> $LOG
-	echo "Downloaded to $COVER." >> $LOG
+  ffmpeg -i "$HOME/data/$LEAF" "$CACHE/$ARTIST - $ALBUM.jpg" >> $LOG
 fi
 # Copy cache for processing
 echo "Copying $COVER." >> $LOG
@@ -63,3 +57,11 @@ echo "$ARTIST+$ALBUM" > $TMP
 #rm /tmp/cover.jpg /tmp/cover.png
 
 
+# 	echo "Downloading cover for $ARTIST - $ALBUM" >> $LOG
+# 	# Download XML info
+# 	curl --data-urlencode artist="$ARTIST" --data-urlencode album="$ALBUM" "http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=$APIKEY" -o /tmp/lastfm.xml &> /dev/null
+# 	echo "Exit: $?. Downloaded $(wc -l /tmp/lastfm.xml | cut -d' ' -f1) bytes." >> $LOG
+# 	# Strip XML and download mega large cover to cache
+# 	curl $(sed -n 's|<image size="mega">\(.*\)<\/image>|\1|p' /tmp/lastfm.xml) -o "$COVER" &> /dev/null
+# 	echo "Exit: $?" >> $LOG
+# 	echo "Downloaded to $COVER." >> $LOG
